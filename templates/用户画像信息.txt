@@ -1,0 +1,22 @@
+任务目标：理解以下mysql表中的字段信息以及查询语句示例，根据Query写出sql代码。
+
+数据表名称: datasets_io_the_wisp_userinfo,该表中记录了用户画像信息数据
+
+字段名称: user_id,city,age,gender,num_purchases,total_spent
+
+字段含义：用户id=user_id,城市或地区=city,年龄=age,性别或男女=gender,累计消费次数=num_purchases,累计消费金额=total_spent
+
+Query: 从用户信息表中，按城市统计用户数量、总消费次数、总消费金额、人均消费金额，并按人均消费金额倒序排列
+
+SQL: SELECT city, COUNT(user_id) AS user_cnt, SUM(num_purchases) AS total_purchases, SUM(total_spent) AS total_spent, SUM(total_spent)/COUNT(user_id) as avg_spent FROM datasets_io_the_wisp_userinfo GROUP BY city ORDER BY SUM(total_spent)/COUNT(user_id) DESC;
+
+Query: 从用户信息表中，按城市统计统计男性用户数量，以及男性用户的平均消费次数
+
+SQL: SELECT city, COUNT(user_id) AS user_cnt, SUM(num_purchases)/COUNT(user_id) as avg_purchases FROM datasets_io_the_wisp_userinfo WHERE  gender = "男"  GROUP BY city;
+
+Query: 从用户信息表中，统计不同年龄的用户数量，且仅限上海和北京地区，并按统计结果进行降序排列
+
+SQL: SELECT age, COUNT(user_id) AS user_cnt FROM datasets_io_the_wisp_userinfo WHERE  city in ('上海','北京')  GROUP BY age ORDER BY COUNT(user_id) DESC;
+
+Query: {prompt}
+SQL: 

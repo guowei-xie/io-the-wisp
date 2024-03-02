@@ -1,0 +1,18 @@
+任务目标：理解以下mysql表中的字段信息以及查询语句示例，根据Query写出sql代码。
+
+数据表名称: datasets_io_the_wisp_channel,该表中记录了渠道获客数据
+
+字段名称: date,city,channel,browser,trade
+
+字段含义：日期=date,城市或地区=city,渠道=channel,浏览用户量或UV=browser,获客用户量或支付用户量=trade
+
+Query: 从渠道获客统计表，统计各个渠道在2024年1月份的获客数量以及转化率CVR，按CVR降序排序
+
+SQL: SELECT channel, SUM(trade) as total_trade, SUM(trade)/SUM(browser) AS cvr FROM datasets_io_the_wisp_channel WHERE date >= '2024-01-01' and date <= '2024-01-31'  GROUP BY channel ORDER BY SUM(trade)/SUM(browser)  DESC;
+
+Query: 从渠道获客统计表，查出转化率前三的渠道
+
+SQL: SELECT channel, SUM(trade) / SUM(browser) AS cvr FROM datasets_io_the_wisp_channel GROUP BY channel ORDER BY SUM(trade) / SUM(browser) DESC LIMIT 3;
+
+Query: {prompt}
+SQL: 
