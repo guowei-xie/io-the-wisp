@@ -1,8 +1,8 @@
 <div align="center">
 
-<p><a href="http://127.0.0.1:7111/" target="_blank"><img src="static/demo.gif" alt="http://127.0.0.1:7111/" /></a></p>
+<p><a href="https://www.xiebro.cool/io-the-wisp/" target="_blank"><img src="static/demo.gif" alt="https://www.xiebro.cool/io-the-wisp/" /></a></p>
 
-DEMO ➫ [🔗 io-the-wisp](http://127.0.0.1:7111/)
+DEMO ➫ [🔗 io-the-wisp](https://www.xiebro.cool/io-the-wisp/)
 
 </div>
 
